@@ -3,18 +3,32 @@ const loginInput = loginForm.querySelector("input");
 const greeting = document.querySelector("#greeting");
 
 const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {
     event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
-    localStorage.setItem("username",username);
+    localStorage.setItem(USERNAME_KEY,username);
     // greeting.innerText = "Hello " + username;
-    greeting.innerText = `Hello ${username}`; // 1번 옆 ` 버튼 취향차이
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    paintGreeting(username);
     // preventDefault(); 기본동작 막아주기
 }
 
+function paintGreeting(username){
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    
+}
 
-loginForm.addEventListener("submit",onLoginSubmit);
-link.addEventListener("click",handleLinkClick);
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null) {
+    //show the form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit",onLoginSubmit);
+} else {
+    //show the greetings
+    paintGreeting(savedUsername);
+}
