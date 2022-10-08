@@ -14,6 +14,8 @@ function saveToDos(){
 function deleteToDo(event) {
     const li = event.target.parentElement;
     li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 
@@ -61,3 +63,9 @@ if (savedToDos !== null){
     parsedToDos.forEach(paintToDo);
 
 }
+
+// filter() 를 이용한 array 제거
+function sexyFilter(){
+
+}
+
