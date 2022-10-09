@@ -1,6 +1,9 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
 const greeting = document.querySelector("#greeting");
+const afterLogin = document.querySelector(".afterId");
+const clockDiv = document.querySelector(".clockDiv");
+const logoutButton = clockDiv.querySelector(".logout_button");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
@@ -18,7 +21,8 @@ function onLoginSubmit(event) {
 function paintGreeting(username){
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
-    
+    afterLogin.classList.remove(HIDDEN_CLASSNAME);
+    clockDiv.classList.add('toTop');
 }
 
 
@@ -32,3 +36,14 @@ if (savedUsername === null) {
     //show the greetings
     paintGreeting(savedUsername);
 }
+
+function handelLogoutClick() {
+    event.preventDefault();
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    clockDiv.classList.remove('toTop');
+    afterLogin.classList.add(HIDDEN_CLASSNAME);
+    localStorage.removeItem(USERNAME_KEY);
+    localStorage.removeItem(TODOS_KEY);
+}
+
+logoutButton.addEventListener("click", handelLogoutClick);

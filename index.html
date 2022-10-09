@@ -10,33 +10,72 @@
 </head>
 
 <body>
+    <div class="clockDiv">
+        <h2 id="clock">00:00:00</h2>
+        <button class="logout_button"></button>
+    </div>
+
+
     <form id="login-form" class="hidden">
         <input required maxlength="15" type="text" placeholder="이름이 뭔가요?">
         <button>로그인</button>
     </form>
-    <h2 id="clock">00:00:00</h2>
-    <h1 id="greeting" class="hidden"></h1>
 
-    <form id="todo-form">
-        <input type="text" placeholder="Write a To Do and Press Enter" required>
-    </form>
+    <div class="afterId hidden">
+        <h1 id="greeting"></h1>
 
-    <ul id="todo-list"></ul>
+        <div class="position_todo">
+            <form id="todo-form">
+                <input type="text" placeholder="오늘의 할일 (Enter 등록)" required>
+            </form>
+
+            <ul id="todo-list"></ul>
+        </div>
+        
+        <div class="after_work">
+            <ul>
+                <li>
+                    <img src="/img/bg_img.png" alt="">
+                    <a  onclick="alert('작업 준비중입니다.');" style="cursor:pointer;" rel="reviewPop01" class="etcBtn popup_open">D-day</a>
+                </li>
+                <li>
+                    <img src="/img/bg_img.png" alt="">
+                    <a onclick="alert('작업 준비중입니다.');" style="cursor:pointer;" rel="reviewPop02" class="etcBtn popup_open">계산기</a>
+                </li>
+                <li>
+                    <img src="/img/bg_img.png" alt="">
+                    <a href="https://www.youtube.com/" target="_blank"><img src="/img/youtube.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div id="ddayClock"></div>
+
+        <div id="quote">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="weather">
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+    <aside id="afterPop">
+        <div class="bg"></div>
+        <div class="cont">
+            <div id="afterPop01"></div>
+        </div>
+    </aside>
     
-    <div id="quote">
-        <span></span>
-        <span></span>
-    </div>
-    <div id="weather">
-        <span></span>
-        <span></span>
-    </div>
-
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/pop.js"></script>
     <script src="js/weather.js"></script>
 </body>
 

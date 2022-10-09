@@ -1,1 +1,48 @@
-.hidden {display:none;}
+@import url("common.css");
+
+body {position: relative; height:100vh; min-height:760px; box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;}
+.clockDiv { position: absolute; left:0; right:0; top:40%; text-align:center; transform:translate(0,-50%); -webkit-transform:translate(0,-50%); -moz-transform:translate(0,-50%); -ms-transform:translate(0,-50%); -o-transform:translate(0,-50%); z-index:200;}
+
+.clockDiv.toTop { top:0; background:linear-gradient(90deg,navy,#1084d0); transform:translate(0,0); transition:all 0.3s ease; -webkit-transition:all 0.3s ease; -moz-transition:all 0.3s ease; -ms-transition:all 0.3s ease; -o-transition:all 0.3s ease; -webkit-transform:translate(0,0); -moz-transform:translate(0,0); -ms-transform:translate(0,0); -o-transform:translate(0,0); box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;}
+
+.clockDiv #clock {  font-size:72px; color:#fff; text-shadow:1px 1px 2px #000;}
+.clockDiv.toTop  #clock {font-size:20px; text-shadow:none;  }
+
+.clockDiv button {display:none;}
+.clockDiv.toTop button {position: absolute; display:block; right:10px; top:50%; transform:translate(0,-50%); min-height:15px; min-width:15px; background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E"); background-position: top 4px left 4px; background-repeat: no-repeat; cursor:pointer;}
+
+#login-form { position: absolute; left:50%; top:60%; transform:translate(-50%,-50%) ; -webkit-transform:translate(-50%,-50%) ; -moz-transform:translate(-50%,-50%) ; -ms-transform:translate(-50%,-50%) ; -o-transform:translate(-50%,-50%) ; z-index:5;}
+
+
+input[type=email], input[type=number], input[type=password], input[type=text], select { padding:0 4px; font-size:18px; color:#000; background-color: #fff; box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a; box-sizing: border-box;}
+
+#login-form button {min-width: 75px; padding: 0 12px; font-size:18px; color:#000; background: silver;border: none; border-radius: 0; box-sizing: border-box; box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf; cursor:pointer;}
+
+.afterId {position: relative; left:0; right:0; top:0; bottom:0; width:100%; height:100%; z-index:10;}
+
+.afterId #greeting {position:absolute; bottom:calc(50% + 26vh); left:20px; font-size:64px; color:#fff; text-shadow:2px 2px 4px #000;}
+
+.afterId .position_todo { position: absolute; left:20px; top:50%; padding:25px; width:calc(60% - 50px); height:45vh; transform:translate(0,-50%); -webkit-transform:translate(0,-50%); -moz-transform:translate(0,-50%); -ms-transform:translate(0,-50%); -o-transform:translate(0,-50%); background:rgba(192,192,192,0.6); overflow:hidden;}
+.afterId .position_todo #todo-form {width:100%;}
+.afterId .position_todo #todo-form input {width:100%;}
+
+.afterId .position_todo #todo-list {width:100%; height:calc(45vh - 76px); padding:5px; overflow-y:scroll;}
+.afterId .position_todo #todo-list::-webkit-scrollbar {width: 6px;}
+.afterId .position_todo #todo-list::-webkit-scrollbar-thumb {background-color: rgba(255, 245, 238, 0.2); border-radius: 10px;}
+.afterId .position_todo #todo-list li {display:flex; align-items: center; justify-content: space-between; margin:0 0 5px; padding:8px; background:#c0c0c0; border:1px solid #c0c0c0; border-radius:5px; transition:all 0.3s ease; -webkit-border-radius:5px; -moz-border-radius:5px; -ms-border-radius:5px; -o-border-radius:5px; -webkit-transition:all 0.3s ease; -moz-transition:all 0.3s ease; -ms-transition:all 0.3s ease; -o-transition:all 0.3s ease; }
+.afterId .position_todo #todo-list li:hover {border:1px solid #000;}
+.afterId .position_todo #todo-list li:last-child {margin:0;}
+.afterId .position_todo #todo-list li span {display:inline-block; font-size:18px; color:#000;}
+.afterId .position_todo #todo-list li button {min-height:15px; min-width:15px; background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E"); background-position: top 4px left 4px; background-repeat: no-repeat; cursor:pointer;}
+
+.afterId #quote {position: absolute; left:0; right:0; bottom:0; padding:0 0 5px; text-align:center;}
+.afterId #quote span {display:block; font-size:16px; color:#c0c0c0; text-shadow:1px 1px 2px #000;}
+.afterId #quote span:nth-child(2) {margin:3px 0 0; font-size:14px;}
+
+.afterId #weather {position: absolute; left:20px; top:50px;}
+.afterId #weather span {display:block; font-size:16px; color:#c0c0c0; text-shadow:1px 1px 2px #000;}
+
+.afterId .after_work { position: absolute; right:20px; top:50%; padding:25px; width:calc(30% - 50px); transform:translate(0,-50%); -webkit-transform:translate(0,-50%); -moz-transform:translate(0,-50%); -ms-transform:translate(0,-50%); -o-transform:translate(0,-50%); }
+.afterId .after_work > ul {display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;}
+.afterId .after_work > ul li {position: relative; width:26%; background:linear-gradient(90deg,navy,#1084d0); box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a; box-sizing: border-box;}
+.afterId .after_work > ul li a {position:absolute;display:flex; align-items: center; justify-content: center;  left:0; top:0; width:100%; height:100%; padding:6px; font-size:13px; color:#fff;}
